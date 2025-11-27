@@ -15,7 +15,7 @@ export default async function Home() {
     console.log(session.user);
   }
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex min-h-screen items-center justify-center  font-sans ">
       <ModeToggle />
       {session?.user ? (
         <div className="flex gap-4 p-5 items-center justify-center">
