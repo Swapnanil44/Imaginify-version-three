@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <Suspense>
       <section className="sm:flex justify-center items-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner">
-        <h1 className="text-[36px] font-semibold sm:text-[44px] leading-[120%] sm:leading-[56px] max-w-[500px] flex-wrap text-center text-white shadow-sm">
+        <h1 className="text-[36px] font-semibold sm:text-[44px] leading-[120%] sm:leading-14 max-w-[500px] flex-wrap text-center text-white ">
           Unleash Your Creative Vision with Imaginify
         </h1>
         <ul className="flex justify-center items-center w-full gap-20">
