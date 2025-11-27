@@ -124,3 +124,7 @@
 @utility bg-purple-gradient {
   background-image: url('/assets/images/gradient-bg.svg');
 }
+
+@utility bg-banner {
+    background-image: url('/assets/images/banner-bg.png');
+}
