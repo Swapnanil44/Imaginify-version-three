@@ -25,16 +25,12 @@ function SideBar() {
       <div className="flex size-full flex-col gap-4">
         <div className="flex items-center justify-between w-full md:py-2 mb-6 pl-2">
           <Link href={"/"} className="flex items-center gap-2">
-            <Image 
-               src="/assets/images/logo-icon.svg" 
-               alt="logo" 
-               width={28} 
-               height={28} 
+            <Image
+              src="/assets/images/logo-text.svg"
+              alt="logo"
+              width={180}
+              height={28}
             />
-             {/* Fixed 'bg-linear' to 'bg-gradient' */}
-            <h1 className="text-3xl font-bold bg-linear-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
-              Imaginify
-            </h1>
           </Link>
           <ModeToggle />
         </div>
@@ -104,9 +100,8 @@ function SideBar() {
                   <LogOutButton />
                 </li>
               </ul>
-            </> 
+            </>
           ) : (
-            
             <ul className="hidden w-full flex-col items-start gap-2 md:flex">
               <li className="flex-center w-full cursor-pointer gap-2">
                 <SigninButton />
