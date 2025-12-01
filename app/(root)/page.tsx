@@ -13,9 +13,9 @@ export default async function Home() {
     headers: await headers(), // you need to pass the headers object.
   });
 
-  if (session?.user) {
-    console.log(session.user);
-  }
+  // if (session?.user) {
+  //   console.log(session.user);
+  // }
   return (
     <Suspense>
       <section className="sm:flex justify-center items-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner">

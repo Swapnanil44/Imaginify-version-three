@@ -27,7 +27,7 @@ const MobileNav = () => {
   } = authClient.useSession();
   const isLoggedIn = !isPending && !!session?.user;
   return (
-    <header className="flex justify-between items-center fixed h-16 w-full border-b border-purple-100  p-5 lg:hidden">
+    <header className="flex justify-between items-center  h-16 w-full border-b border-purple-100   p-5 lg:hidden">
       <Link href="/" className="flex items-center gap-2 md:py-2">
         <Image
           src="/assets/images/logo-text.svg"

@@ -16,7 +16,7 @@ function SideBar() {
     error,
   } = authClient.useSession();
 
-  console.log(session?.user);
+  // console.log(session?.user);
   const pathname = usePathname();
 
   const isLoggedIn = !isPending && !!session?.user;
