@@ -129,7 +129,5 @@
     background-image: url('/assets/images/banner-bg.png');
 }
 
-@utility prompt-field {
-  @apply flex flex-col gap-5 lg:flex-row lg:gap-10;
-}
+
 

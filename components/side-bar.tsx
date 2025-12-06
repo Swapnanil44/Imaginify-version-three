@@ -44,7 +44,7 @@ function SideBar() {
                   return (
                     <li
                       key={link.route}
-                      className={`flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner group ${
+                      className={`flex justify-center items-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner group ${
                         isActive
                           ? "bg-purple-gradient text-white shadow-md"
                           : "text-gray-700 hover:bg-purple-100 hover:shadow-inner dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
@@ -74,7 +74,7 @@ function SideBar() {
                   return (
                     <li
                       key={link.route}
-                      className={`flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner group ${
+                      className={`flex justify-center items-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner group ${
                         isActive
                           ? "bg-purple-gradient text-white shadow-md"
                           : "text-gray-700 hover:bg-purple-100 hover:shadow-inner dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
@@ -96,14 +96,14 @@ function SideBar() {
                     </li>
                   );
                 })}
-                <li className="flex-center w-full cursor-pointer gap-2">
+                <li className="flex justify-center items-center w-full cursor-pointer gap-2">
                   <LogOutButton />
                 </li>
               </ul>
             </>
           ) : (
             <ul className="hidden w-full flex-col items-start gap-2 md:flex">
-              <li className="flex-center w-full cursor-pointer gap-2">
+              <li className="flex justify-center items-center w-full cursor-pointer gap-2">
                 <SigninButton />
               </li>
             </ul>

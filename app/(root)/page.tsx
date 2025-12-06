@@ -1,6 +1,8 @@
+import { Collection } from "@/components/collection";
 import LogOutButton from "@/components/logout-button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { navLinks } from "@/constants";
+import { getAllImages } from "@/lib/actions/image.actions";
 import { auth } from "@/lib/auth";
 import { LogOut } from "lucide-react";
 import { headers } from "next/headers";
@@ -8,14 +10,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export default async function Home() {
-  const session = await auth.api.getSession({
-    headers: await headers(), // you need to pass the headers object.
-  });
+export default async function Home({params}:any) {
+  const {searchParams} = await params; 
+  const page = Number(searchParams?.page) || 1;
+  const searchQuery = (searchParams?.query as string) || "";
 
-  // if (session?.user) {
-  //   console.log(session.user);
-  // }
+  const images = await getAllImages({ page, searchQuery });
   return (
     <Suspense>
       <section className="sm:flex justify-center items-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner">
@@ -36,6 +36,14 @@ export default async function Home() {
             </Link>
           ))}
         </ul>
+      </section>
+      <section className="sm:mt-12">
+        <Collection
+          hasSearch={true}
+          images={images?.data}
+          totalPages={images?.totalPage}
+          page={page}
+        />
       </section>
     </Suspense>
   );
