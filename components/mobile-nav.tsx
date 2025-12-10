@@ -66,7 +66,8 @@ const MobileNav = () => {
 
                   <ul className="mt-8 flex w-full flex-col items-start gap-1">
                     <li className="pl-2 pb-4 flex items-center">
-                        <UserButton url={session?.user?.image} /> <span>{session?.user.name}</span>
+                        
+                        <UserButton url={session?.user?.image} /> <Link href={'/profile'}>{session?.user.name}</Link>
                     </li>
                     {navLinks.map((link) => {
                       const isActive = link.route === pathname;
