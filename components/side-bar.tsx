@@ -13,7 +13,6 @@ function SideBar() {
   const {
     data: session,
     isPending, // or isLoading in older versions
-    error,
   } = authClient.useSession();
 
   // console.log(session?.user);

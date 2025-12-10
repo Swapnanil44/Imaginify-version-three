@@ -6,7 +6,7 @@
 //     lastName?: string;
 //     photo?: string;
 //   }
-/* eslint-disable no-unused-vars */
+
 
 // ====== USER PARAMS
 declare type CreateUserParams = {
@@ -33,6 +33,7 @@ declare type AddImageParams = {
     transformationType: string;
     width: number;
     height: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     config: any;
     secureURL: string;
     transformationURL: string;
@@ -52,6 +53,7 @@ declare type UpdateImageParams = {
     transformationType: string;
     width: number;
     height: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     config: any;
     secureURL: string;
     transformationURL: string;
@@ -136,6 +138,7 @@ declare type TransformationFormProps = {
 };
 
 declare type TransformedImageProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image: any;
   type: string;
   title: string;

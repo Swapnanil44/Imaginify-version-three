@@ -3,7 +3,6 @@ import SignInWithGoogle from "@/components/sign-in-with-google";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";

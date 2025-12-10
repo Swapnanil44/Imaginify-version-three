@@ -32,6 +32,7 @@ export const CustomField = ({
     <FormField
       control={control}
       name={name}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       render={({ field }:{field: any}) => (
         <FormItem className={className}>
           {formLabel && <FormLabel>{formLabel}</FormLabel>}

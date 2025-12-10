@@ -49,7 +49,7 @@ const TransformationForm = ({
   creditBalance,
   config = null,
 }: TransformationFormProps) => {
-  console.log(`Transformation form ${userId}`)
+  // console.log(`Transformation form ${userId}`)
   const transformationType = transformationTypes[type];
   const [image, setImage] = useState(data);
   const [newTransformation, setNewTransformation] =
@@ -150,6 +150,7 @@ const TransformationForm = ({
     onChangeField: (value: string) => void
   ) => {
     const imageSize = aspectRatioOptions[value as AspectRatioKey];
+    
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setImage((prevState: any) => ({
       ...prevState,
@@ -199,7 +200,10 @@ const TransformationForm = ({
 
   useEffect(() => {
     if (image && (type === "restore" || type === "removeBackground")) {
-      setNewTransformation(transformationType.config);
+      // FIX: Wrapped in setTimeout to prevent synchronous set-state warning
+      setTimeout(() => {
+        setNewTransformation(transformationType.config);
+      }, 0);
     }
   }, [image, transformationType.config, type]);
 
@@ -253,11 +257,11 @@ const TransformationForm = ({
                 type === "remove" ? "Object to remove" : "Object to recolor"
               }
               className="w-full"
-              render={({ field }:{field: any}) => (
+              render={({ field }) => (
                 <Input
                   value={field.value}
                   className="rounded-2xl border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-dark-600 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent"
-                  onChange={(e: any) =>
+                  onChange={(e) =>
                     onInputChangeHandler(
                       "prompt",
                       e.target.value,
@@ -275,11 +279,11 @@ const TransformationForm = ({
                 name="color"
                 formLabel="Replacement Color"
                 className="w-full"
-                render={({ field }:{field: any}) => (
+                render={({ field }) => (
                   <Input
                     value={field.value}
                     className="rounded-2xl border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-dark-600 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent"
-                    onChange={(e: any) =>
+                    onChange={(e) =>
                       onInputChangeHandler(
                         "color",
                         e.target.value,
@@ -299,7 +303,7 @@ const TransformationForm = ({
             control={form.control}
             name="publicId"
             className="flex size-full flex-col"
-            render={({ field }:{field: any}) => (
+            render={({ field }) => (
               <MediaUploader
                 onValueChange={field.onChange}
                 setImage={setImage}

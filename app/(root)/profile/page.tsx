@@ -7,6 +7,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function ProfilePage({ params }:any) {
   const { searchParams } = await params;
   const page = Number(searchParams?.page) || 1;
@@ -17,8 +18,8 @@ async function ProfilePage({ params }:any) {
 
   const user = session.user;
   const images = await getUserImages({ page, userId: user.id });
-  console.log(user)
-  console.log(images)
+  // console.log(user)
+  // console.log(images)
   return (
     <>
       <Header title="Profile" />

@@ -10,6 +10,7 @@ import { DeleteConfirmation } from "@/components/delete-confirmation";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ImageDetails = async ({ params }: { params: any }) => {
   const { id } = await params;
   const session = await auth.api.getSession({

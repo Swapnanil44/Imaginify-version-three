@@ -31,12 +31,12 @@ export async function getAllImages({
     await connectToDatabase();
 
     // More detailed debugging
-    console.log("=== ENVIRONMENT VARIABLES DEBUG ===");
-    console.log("NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME:", process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME);
-    console.log("CLOUDINARY_API_KEY exists:", !!process.env.CLOUDINARY_API_KEY);
-    console.log("CLOUDINARY_API_SECRET exists:", !!process.env.CLOUDINARY_API_SECRET);
-    console.log("All env vars:", Object.keys(process.env).filter(key => key.includes('CLOUDINARY')));
-    console.log("=== END DEBUG ===");
+    // console.log("=== ENVIRONMENT VARIABLES DEBUG ===");
+    // console.log("NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME:", process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME);
+    // console.log("CLOUDINARY_API_KEY exists:", !!process.env.CLOUDINARY_API_KEY);
+    // console.log("CLOUDINARY_API_SECRET exists:", !!process.env.CLOUDINARY_API_SECRET);
+    // console.log("All env vars:", Object.keys(process.env).filter(key => key.includes('CLOUDINARY')));
+    // console.log("=== END DEBUG ===");
 
     // Check if all required env vars are present BEFORE configuring
     if (
@@ -145,7 +145,7 @@ export async function addImage({ image, userId, path }: AddImageParams) {
 
     console.log("Current Mongoose DB Name:", mongoose.connection?.db?.databaseName);
 
-    const userObjectId = new mongoose.Types.ObjectId(userId);
+    // const userObjectId = new mongoose.Types.ObjectId(userId);
 
     const userCount = await User.countDocuments();
     console.log("Total Users in this DB:", userCount);
@@ -153,7 +153,7 @@ export async function addImage({ image, userId, path }: AddImageParams) {
     if (!mongoose.Types.ObjectId.isValid(cleanId)) {
         throw new Error("Invalid ObjectId format");
     }
-    const objectId = new mongoose.Types.ObjectId(cleanId);
+    // const objectId = new mongoose.Types.ObjectId(cleanId);
 
     const author = await User.findById(userId);
 

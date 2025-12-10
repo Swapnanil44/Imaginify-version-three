@@ -11,9 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { Button } from "./ui/button";
 import { authClient } from "@/lib/auth-client";
-import SigninButton from "./ui/signin-button";
 import UserButton from "./user-button";
 import LogOutButton from "./logout-button";
 import { ModeToggle } from "./mode-toggle";
@@ -23,7 +21,6 @@ const MobileNav = () => {
   const {
     data: session,
     isPending, // or isLoading in older versions
-    error,
   } = authClient.useSession();
   const isLoggedIn = !isPending && !!session?.user;
   return (

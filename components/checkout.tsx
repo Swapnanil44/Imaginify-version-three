@@ -44,7 +44,7 @@ const Checkout = ({
       credits,
       buyerId,
     };
-    console.log(transaction);
+    // console.log(transaction);
     await checkoutCredits(transaction);
   };
 
